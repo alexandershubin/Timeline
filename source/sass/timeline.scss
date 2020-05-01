@@ -1,0 +1,211 @@
+// общие стили
+.timeline-margin {
+  margin: 100px 0;
+}
+
+.timeline__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  counter-reset: myCounter;
+}
+
+.timeline__span {
+  font-size: 10px;
+  color: $font-color;
+  margin: 10px 0;
+  display: inline-block;
+  width: 50px;
+  position: relative;
+
+
+  &::after {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    position: absolute;
+    right: 20px;
+    top: 0;
+    font-size: 10px;
+  }
+}
+
+.timeline__item {
+  position: relative;
+  flex: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background: $gray;
+  }
+
+  &:last-child {
+    flex: 0;
+    .timeline__span {
+      margin-right: -20px;
+    }
+    .timeline__circle {
+      left: 20px;
+    }
+  }
+}
+
+.timeline__circle {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  top: -4px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #ffffff;
+}
+
+.button.margin-bottom {
+  margin-bottom: 50px;
+}
+
+.button-block {
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #64ae3a;
+  margin: 5px 5px 5px 0;
+  padding: 5px 10px;
+  outline: none;
+
+
+  &:hover {
+    background: #f49530;
+    transition: .3s ease-in-out;
+    color: #ffffff;
+  }
+}
+
+// общие стили
+
+//////////////////////////
+
+// положение прогресс бара
+.timeline__list--top {
+  .timeline__item {
+    &::before {
+      top: 0;
+    }
+  }
+
+  .timeline__circle {
+    top: -4px;
+  }
+}
+
+.timeline__list--bottom {
+  .timeline__item {
+    &::before {
+      bottom: 0;
+    }
+  }
+
+  .timeline__circle {
+    top: auto;
+    bottom: -4px;
+  }
+}
+
+// положение прогресс бара
+
+//////////////////////////
+
+// стили для item
+.item--green {
+  &::before {
+    background: $progress;
+  }
+
+  .timeline__circle {
+    background: $progress;
+    border: 1px solid #ffffff;
+  }
+}
+
+.item--orange {
+  &::before {
+    background: $gray;
+  }
+
+  .timeline__circle {
+    background: $orange;
+    border: 1px solid #ffffff;
+  }
+}
+
+.item--center {
+  .timeline__span {
+    margin-left: -10px;
+  }
+}
+
+// стили для item
+
+.item-double {
+  .timeline__item {
+    text-align: center;
+
+    &:last-child {
+      flex: 1;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        background: #ffffff;
+      }
+
+      .timeline__circle {
+        left: 0px;
+      }
+    }
+  }
+
+  .item--orange {
+    &::before {
+      background: $orange;
+    }
+  }
+
+  .timeline__span {
+    &::after {
+      right: 5px;
+    }
+  }
+}
+
+.timeline__list--bottom.item-double {
+  .timeline__item {
+    &:last-child {
+      &::after {
+        bottom: -3px;
+      }
+    }
+  }
+}
+
+.timeline__list--top.item-double {
+  .timeline__item {
+    &:last-child {
+      &::after {
+        top: -3px;
+      }
+    }
+  }
+}
+
+//////////////////////////
