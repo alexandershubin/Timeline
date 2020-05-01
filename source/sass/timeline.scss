@@ -1,5 +1,5 @@
 // общие стили
-.timeline-margin {
+.timeline--margin {
   margin: 100px 0;
 }
 
@@ -17,7 +17,6 @@
   display: inline-block;
   width: 50px;
   position: relative;
-
 
   &::after {
     counter-increment: myCounter;
@@ -65,11 +64,11 @@
   background: #ffffff;
 }
 
-.button.margin-bottom {
+.button.bottom--margin {
   margin-bottom: 50px;
 }
 
-.button-block {
+.button__nav {
   background: none;
   border-radius: 5px;
   border: 1px solid #64ae3a;
@@ -86,8 +85,6 @@
 }
 
 // общие стили
-
-//////////////////////////
 
 // положение прогресс бара
 .timeline__list--top {
@@ -117,10 +114,8 @@
 
 // положение прогресс бара
 
-//////////////////////////
-
 // стили для item
-.item--green {
+.timeline__item--green {
   &::before {
     background: $progress;
   }
@@ -131,7 +126,7 @@
   }
 }
 
-.item--orange {
+.timeline__item--orange {
   &::before {
     background: $gray;
   }
@@ -142,7 +137,7 @@
   }
 }
 
-.item--center {
+.timeline__item--center {
   .timeline__span {
     margin-left: -10px;
   }
@@ -175,7 +170,7 @@
     }
   }
 
-  .item--orange {
+  .timeline__item--orange {
     &::before {
       background: $orange;
     }
@@ -208,4 +203,3 @@
   }
 }
 
-//////////////////////////
