@@ -1,13 +1,16 @@
 // общие стили
-.timeline--margin {
-  margin: 100px 0;
+.timeline {
+  height: 100vh;
+  &--margin {
+    margin: 100px 0;
+  }
 }
-
 .timeline__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   counter-reset: myCounter;
+  min-height: 60px;
 }
 
 .timeline__span {
@@ -43,9 +46,11 @@
 
   &:last-child {
     flex: 0;
+
     .timeline__span {
       margin-right: -20px;
     }
+
     .timeline__circle {
       left: 20px;
     }
@@ -64,7 +69,7 @@
   background: #ffffff;
 }
 
-.button.bottom--margin {
+.button.button--margin {
   margin-bottom: 50px;
 }
 
@@ -145,7 +150,7 @@
 
 // стили для item
 
-.item-double {
+.timeline__list--double {
   .timeline__item {
     text-align: center;
 
@@ -159,6 +164,7 @@
         right: 0;
         width: 8px;
         height: 8px;
+        top: -4px;
         border-radius: 50%;
         border: 1px solid #ccc;
         background: #ffffff;
@@ -183,7 +189,7 @@
   }
 }
 
-.timeline__list--bottom.item-double {
+.timeline__list--bottom.timeline__list--double {
   .timeline__item {
     &:last-child {
       &::after {
@@ -193,7 +199,7 @@
   }
 }
 
-.timeline__list--top.item-double {
+.timeline__list--top.timeline__list--double {
   .timeline__item {
     &:last-child {
       &::after {
